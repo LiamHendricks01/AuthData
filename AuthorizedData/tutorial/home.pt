@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<title>Wiki: View</title>
+</head>
+<body>
+<h1>Wiki</h1>
+
+
+<div>
+    <a tal:condition="view.logged_in is None"
+            href="${request.application_url}/login">Log In</a>
+    <a tal:condition="view.logged_in is not None"
+            href="${request.application_url}/logout">Logout</a>
+</div>
+
+
+
+
+<ul>
+    <li tal:repeat="page pages">
+
+        <a href="${request.route_url('wikipage_view', uid=page.uid)}">
+
+                ${page.title}
+        </a>
+    </li>
+</ul>
+
+</body>
+</html>
+

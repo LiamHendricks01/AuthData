@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Wiki: View</title>
+</head>
+<body>
+<h1>Delete Wiki Page</h1>
+
+<a href="${request.route_url('wiki_view')}">
+    Up
+</a> 
+
+
+<form method="POST">
+<ul>
+    <li tal:repeat="page pages">
+	<input type="checkbox" tal:attributes="name page.uid"/>
+
+	<label> ${page.title}</label>
+<!--
+        <a href="${request.route_url('wikipage_view', uid=page.uid)}">
+                ${page.title}
+        </a>
+-->
+    </li>
+</ul>
+<input type="submit" name="Delete" value="Delete"/>
+</form>
+</body>
+</html>
+           
